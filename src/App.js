@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './image/logo.png';
+import video from './video/pictures.mp4';
+import './style/bootstrap.min.css';
+import './style/fontello.css';
+import './style/custom.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <video id="background-video" autoPlay loop muted>
+          <source src={video} type='video/mp4' />
+        </video>
+        <div class="row" id="log">
+          <img id="logo"src={logo} alt="UBUNG"/>
+          <div class="container" id="register">
+            <button class="button"><span class="icon-gplus">Login</span></button>
+            <button class="button"><span class="icon-gplus">Singup</span></button>
+          </div>
+        </div>
+        <input type="checkbox" class="checkbox" id="check"/>
+        <label class="menu"></label>
       </div>
     );
   }

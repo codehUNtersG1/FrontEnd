@@ -1,0 +1,57 @@
+#background-video{
+    min-height: 100%;
+    min-width: 100%;
+    float: left;
+    top: 0;
+    padding: none;
+    position: fixed; 
+}
+#log{
+    justify-content: center;
+}
+#logo{
+    justify-content: center;
+    position: absolute;
+    max-width: 35%;
+    margin-top: 10%;
+}
+#register{
+    justify-content: center;
+    position: absolute;
+    max-width: 35%;
+    margin-top: 20%;
+}
+.button {
+    border-radius: 4px;
+    background-color: #004463e8;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 100%;
+    padding: 4%;
+    width: 40%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5%;
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.button:hover span {
+    padding-right: 25px;
+}  
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
