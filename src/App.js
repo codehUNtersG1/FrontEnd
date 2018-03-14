@@ -5,6 +5,9 @@ import './style/bootstrap.min.css';
 import './style/fontello.css';
 import './style/custom.css';
 
+
+import LogIn from './LogIn';
+import SignUp from './SignUp';
 class App extends Component {
   
   render() {
@@ -16,8 +19,10 @@ class App extends Component {
         <div class="row" id="log">
           <img id="logo"src={logo} alt="UBUNG"/>
           <div class="container" id="register">
-            <button class="button"><span class="icon-gplus">Login</span></button>
-            <button class="button"><span class="icon-gplus">Singup</span></button>
+            <LogIn/>
+            <SignUp/>
+            {/*<button class="button"><span class="icon-gplus">Login</span></button>*/}
+            {/*<button class="button"><span class="icon-gplus">Singup</span></button>*/}
           </div>
         </div>
         <input type="checkbox" class="checkbox" id="check"/>
