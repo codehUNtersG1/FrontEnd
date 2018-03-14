@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import logo from './image/logo.png';
+import logo from './image/logo3.png';
 import video from './video/pictures.mp4';
 import './style/bootstrap.min.css';
 import './style/fontello.css';
 import './style/custom.css';
 
 class App extends Component {
+  
   render() {
     return (
       <div>
@@ -20,7 +21,10 @@ class App extends Component {
           </div>
         </div>
         <input type="checkbox" class="checkbox" id="check"/>
-        <label class="menu"></label>
+        <label class="menu" for="check"><span class="icon-question"></span></label>
+        <div class="left-panel"> 
+        <h2 id="faq-h2">Preguntas Frecuentes</h2>
+        </div>
       </div>
     );
   }

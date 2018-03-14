@@ -23,7 +23,7 @@
 }
 .button {
     border-radius: 4px;
-    background-color: #004463e8;
+    background: linear-gradient(#006da0d0, #006594d0, #002a3dd0);
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -54,4 +54,43 @@
 .button:hover span:after {
     opacity: 1;
     right: 0;
+}
+.menu{
+    width: 2.7rem;
+    height: 3rem;
+    background:  #006594d0;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin: 0 0 0 0;
+    font-size: 2rem;
+    color: #FFFFFF;
+    text-align: left;
+    transition: left 0.4s;
+}
+.checkbox:checked ~ .menu{
+    left: 20%;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+.left-panel{
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(#006da0d0, #006594d0, #002a3dd0);
+    top: 0;
+    left: -20%;
+    display: flex;
+    transition: left 0.4s;
+}
+.checkbox:checked ~ .left-panel{
+    left: 0;
+}
+.checkbox{
+    display: none;
+}
+#faq-h2{
+    text-align: center;
+    color: #FFFFFF;
+    margin: 50% 0 0 0;
 }
