@@ -2,23 +2,23 @@ import React, { Component } from 'react';
 
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-import Landing from './Landing';
-import Profile from './Profile';
-import Groups from './Groups';
-import Group from './Group';
-import Events from '/Events';
-import Event from './Event';
-import Achievements from './Achievements';
-import Diets from './Diets';
-import Diet from './Diet';
-import UserFoods from './UserFoods';
-import Foods from './Foods';
-import PhyActivities from './PhyActivities';
-import PhyActivity from './PhyActivity';
-import UserPhyActivities from './UserPhyActivities';
-import Plans from './Plans';
-import TipDiets from './TipDiets';
-import TipActivities from './TipActivities';
+import Landing from './component/Landing/Landing';
+import Profile from './component/User/Profile';
+import Groups from './component/Groups/Groups';
+import Group from './component/Groups/Group';
+import Events from './component/Events/Events';
+import Event from './component/Events/Event';
+import Achievements from './component/User/Achievements';
+import Diets from './component/Diets/Diets';
+import Diet from './component/Diets/Diet';
+import UserFoods from './component/Diets/UserFoods';
+import Foods from './component/Diets/Foods';
+import PhyActivities from './component/Activities/PhyActivities';
+import PhyActivity from './component/Activities/PhyActivity';
+import UserPhyActivities from './component/Activities/UserPhyActivities';
+import Plans from './component/Activities/Plans';
+import TipDiets from './component/User/TipDiets';
+import TipActivities from './component/User/TipActivities';
 
 class App extends Component {
   

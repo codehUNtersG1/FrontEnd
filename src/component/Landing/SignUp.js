@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './style/bootstrap.min.css';
-import './style/fontello.css';
-import './style/custom.css';
+import '../../style/bootstrap.min.css';
+import '../../style/fontello.css';
+import '../../style/custom.css';
 
 
 
@@ -30,14 +30,14 @@ class SignUp extends Component {
 
 	render(){
 		return(
-					  <GoogleLogin socialId="533966985417-7sdh67rlsfg2oil6cu62osfac89fso4q.apps.googleusercontent.com"
-                     	className="button icon-gplus"
-                     	hd ="unal.edu.co"	
-                     	scope="profile"
-                     	fetchBasicProfile={true}
-                     	responseHandler={this.responseGoogle}
-                     	buttonText="Sign Up"
-                      />	
+			<GoogleLogin socialId="533966985417-7sdh67rlsfg2oil6cu62osfac89fso4q.apps.googleusercontent.com"
+                className="button icon-gplus"
+                hd ="unal.edu.co"	
+                scope="profile"
+                fetchBasicProfile={true}
+                responseHandler={this.responseGoogle}
+                buttonText="Sign Up"
+            />	
 		);
 	}
 }
