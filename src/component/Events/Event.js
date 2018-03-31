@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
-
-import Header from '../Header/Header'
+import { connect } from 'react-redux';
+import Header from '../Header/Header';
 
 class Event extends Component {
   
   render() {
-    return (
-      <div>
-        <Header/>
-        <h1> Este es la página de un Evento</h1>
-      </div>
-    );
+    if (this.props.user !== null){
+      return (
+        <div>
+          <Header/>
+          <h1> Estas es la pagina de un evento</h1>
+        </div>
+      );
+    } else{
+      return(<h1> Esta vista no esta permitida </h1>);
+    }
   }
 }
+const mapStateToProps = (state) =>{
+  console.log(state);
+  return {
+    user: state.user
+  };
+};
 
-export default Event;
+const mapDispatchToProps = dispatch =>{
+  return null;
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Event);

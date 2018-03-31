@@ -21,13 +21,13 @@ import TipDiets from './component/User/TipDiets';
 import TipActivities from './component/User/TipActivities';
 
 class App extends Component {
-  
+   
   render() {
     return (
       <Router>
         <div>
           <Route exact path ="/" render={ () => <Landing /> }/>
-          <Route exact path ="/user/:id" render={ () => <Profile /> }/>
+          <Route exact path ="/user/:id" render={ (id) => <Profile id ={id.match} /> }/>
           <Route exact path ="/groups" render = { () => <Groups /> } />
           <Route exact path ="/group/:id" render = { () => <Group /> } />
           <Route exact path = "/group/:id/events" render = { () => <Events /> } />
