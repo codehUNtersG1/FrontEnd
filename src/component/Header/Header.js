@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import '../../style/bootstrap.min.css';
 import logo from '../../image/logo.png';
+=======
+>>>>>>> 8f5b8527e85aed45565c0c91b3b868db463bdcae
 import './Header.css';
 
 class Header extends Component {
   
   render() {
     return (
+<<<<<<< HEAD
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <img class="navbar-brand" src={logo}></img>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
@@ -34,10 +38,18 @@ class Header extends Component {
           </form>
         </div>
       </nav>
+=======
+      <div>
+        <h1> Este es el Header</h1>
+      </div>
+>>>>>>> 8f5b8527e85aed45565c0c91b3b868db463bdcae
     );
   }
 }
 
 export default Header;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8f5b8527e85aed45565c0c91b3b868db463bdcae
