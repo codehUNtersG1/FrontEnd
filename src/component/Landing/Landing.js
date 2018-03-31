@@ -4,6 +4,7 @@ import video from '../../video/fruit.mp4';
 import '../../style/bootstrap.min.css';
 import '../../style/fontello.css';
 import '../../style/custom.css';
+<<<<<<< HEAD
 import './cus.css';
 
 import LogIn from './LogIn';
@@ -11,6 +12,14 @@ import SignUp from './SignUp';
 
 class Landing extends Component {
 
+=======
+
+
+import LogIn from './LogIn';
+import SignUp from './SignUp';
+class Landing extends Component {
+  
+>>>>>>> 8f5b8527e85aed45565c0c91b3b868db463bdcae
   render() {
     return (
       <div>
@@ -29,6 +38,7 @@ class Landing extends Component {
         <input type="checkbox" class="checkbox" id="check"/>
         <label class="menu" for="check"><span class="icon-question"></span></label>
         <div class="left-panel"> 
+<<<<<<< HEAD
           <div class="container">
             <div class="interior">
               <a class="btn" href="#open-modal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>¿Qué es UBUNG?</a>
@@ -40,6 +50,14 @@ class Landing extends Component {
               <h1>UBUNG!</h1>
               <div>Es un website que te ayudara a tener una vida mas sana en base a recomendaciones....</div>
               </div>
+=======
+          
+          <div class="list-group">
+          <h2 id="faq-h2">Preguntas Frecuentes</h2>
+            <a href="" class="list-group-item list-group-item-info">¿Qué es UBUNG?</a>
+            <a href="" class="list-group-item list-group-item-info">question</a>
+            <a href="" class="list-group-item list-group-item-info">quesiotn</a>
+>>>>>>> 8f5b8527e85aed45565c0c91b3b868db463bdcae
           </div>
         </div>
       </div>
