@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import logo from '../../image/logo3.png';
-import video from '../../video/fruit.mp4';
-import '../../style/bootstrap.min.css';
+import video from '../../video/walk.mp4';
+import video1 from '../../video/fruit.mp4';
+import video2 from '../../video/pictures.mp4';
 import '../../style/fontello.css';
-import '../../style/custom.css';
-
+import './custom.css';
 
 import LogIn from './LogIn';
 import SignUp from './SignUp';
+
+
 class Landing extends Component {
-  
+
   render() {
     return (
       <div>
@@ -18,22 +20,28 @@ class Landing extends Component {
         </video>
         <div class="row" id="log">
           <img id="logo"src={logo} alt="UBUNG"/>
+          
           <div class="container" id="register">
+            <h2 id="slogan"><i><b>slogan</b></i></h2>
             <LogIn/>
             <SignUp/>
-            {/*<button class="button"><span class="icon-gplus">Login</span></button>*/}
-            {/*<button class="button"><span class="icon-gplus">Singup</span></button>*/}
+            <h2 class="des">¿Qué es UBUNG?</h2>
+            <p class="des">Ubung es tu asistente de dieta y ejercicio</p>
           </div>
         </div>
         <input type="checkbox" class="checkbox" id="check"/>
         <label class="menu" for="check"><span class="icon-question"></span></label>
         <div class="left-panel"> 
-          
-          <div class="list-group">
-          <h2 id="faq-h2">Preguntas Frecuentes</h2>
-            <a href="" class="list-group-item list-group-item-info">¿Qué es UBUNG?</a>
-            <a href="" class="list-group-item list-group-item-info">question</a>
-            <a href="" class="list-group-item list-group-item-info">quesiotn</a>
+          <div class="container">
+            <h2><b>Preguntas Frecuentes</b></h2>
+            <button id="pbtn" class="w3-bar" data-toggle="collapse" data-target="#quso">¿Quién puede usarlo?</button>
+            <div id="quso" class="collapse ans">
+              Ubung es un website diseñado para el uso de cualquier integrante de la comunidad de la Universidad Nacional de Colombia.
+            </div>
+            <button id="pbtn" class="w3-bar" data-toggle="collapse" data-target="#off">¿Es una web oficial?</button>
+            <div id="off" class="collapse ans">
+              Ubung no es una web oficial de la Universidad Nacional de Colombia.
+            </div>
           </div>
         </div>
       </div>

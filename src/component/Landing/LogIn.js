@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import '../../style/bootstrap.min.css';
 import '../../style/fontello.css';
-import '../../style/custom.css';
+import './custom.css';
 
 
 import { GoogleLogin } from 'react-google-login-component';
