@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import Header from '../Header/Header';
 import './Profile.css';
-import profile from '../../image/user.png';
-import Header from '../Header/Header'
 
 class Profile extends Component {
   

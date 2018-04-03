@@ -13,18 +13,18 @@
 #logo{
   position: absolute;
   max-width: 35%;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 #register{
   margin: 0 0 0 0;
   position: absolute;
   max-width: 35%;
   max-height: 20%;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 #slogan{
   margin: 5%;
-  color: #FFFFFF;
+  color: #002a3dd0;
   max-width: 100%;
 }
 .des{
@@ -40,7 +40,7 @@
   text-align: center;
   font-size: 100%;
   padding: 4%;
-  width: 40%;
+  width: 45%;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5%;

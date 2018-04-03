@@ -21,7 +21,8 @@ class LogIn extends Component {
 
 	    if(emailRegex.test(userEmail)){
 	    	console.log("Acá se debe hacer una validación en la base de datos");
-	    	console.log(googleUser);
+			console.log(googleUser);
+			console.log(googleUser.accessToken);
 	    	console.log({accessToken: id_token});
 	    } else{
 	    	console.log("Error, su cuenta no tiene dominio unal");
@@ -32,12 +33,12 @@ class LogIn extends Component {
 	render(){
 		return(
 			<GoogleLogin socialId="533966985417-7sdh67rlsfg2oil6cu62osfac89fso4q.apps.googleusercontent.com"
-                className="button icon-gplus"
+                className="button"
                 hd ="unal.edu.co"	
                 scope="profile"
                 fetchBasicProfile={true}
                 responseHandler={this.responseGoogle}
-                buttonText="Login"
+                buttonText="Acceder con Google"
             />
 		);
 	}
