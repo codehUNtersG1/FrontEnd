@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header'
 
 class Event extends Component {
@@ -9,6 +9,7 @@ class Event extends Component {
       <div>
         <Header/>
         <h1> Este es la página de un Evento</h1>
+        <Footer/>
       </div>
     );
   }

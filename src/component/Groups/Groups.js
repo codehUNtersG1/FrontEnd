@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 class Groups extends Component {
@@ -9,6 +9,7 @@ class Groups extends Component {
       <div>
         <Header/>
         <h1> Este es la página de grupos</h1>
+        <Footer/>
       </div>
     );
   }

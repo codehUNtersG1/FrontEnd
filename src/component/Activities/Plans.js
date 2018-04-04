@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header'
 
 class Plans extends Component {
@@ -9,6 +9,7 @@ class Plans extends Component {
       <div>
         <Header/>
         <h1> Este son los planes de una actividad física</h1>
+        <Footer/>
       </div>
     );
   }

@@ -37,6 +37,7 @@ class GLogIn extends Component {
                 <div>
                     <GoogleLogin height="10" 
                         width="55%" 
+                        text="Acceder con Google"
                         backgroundColor="#006594d0"
                         access="offline" 
                         scope="email profile"
