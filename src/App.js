@@ -19,6 +19,7 @@ import UserPhyActivities from './component/Activities/UserPhyActivities';
 import Plans from './component/Activities/Plans';
 import TipDiets from './component/User/TipDiets';
 import TipActivities from './component/User/TipActivities';
+import LogIn from './component/Landing/LogIn';
 
 class App extends Component {
    
@@ -29,20 +30,20 @@ class App extends Component {
           <Route exact path ="/" render={ () => <Landing /> }/>
           <Route exact path ="/user/:id" render={ (id) => <Profile id ={id.match} /> }/>
           <Route exact path ="/groups" render = { () => <Groups /> } />
-          <Route exact path ="/group/:id" render = { () => <Group /> } />
-          <Route exact path = "/group/:id/events" render = { () => <Events /> } />
-          <Route exact path = "/event/:id" render = { () => <Event /> } />
-          <Route exact path = "/user/:id/achievements" render = { () => <Achievements />} />
-          <Route exact path = "/user/:id/diets" render = { () => <Diets /> } />
-          <Route exact path = "/diet/:id" render = { () => <Diet /> } />
-          <Route exact path = "/diet/:id/foods" render = {() => <Foods/>} />
-          <Route exact path = "/user/:id/diet/:id/foods" render = {() => <UserFoods/>} />
+          <Route exact path ="/group/:id" render = { (id) => <Group id={id.match}/> } />
+          <Route exact path = "/group/:id/events" render = { (id) => <Events id={id.match}/> } />
+          <Route exact path = "/event/:id" render = { (id) => <Event id={id.match}/> } />
+          <Route exact path = "/user/:id/achievements" render = { (id) => <Achievements id={id.match}/>} />
+          <Route exact path = "/user/:id/diets" render = { (id) => <Diets id={id.match}/> } />
+          <Route exact path = "/diet/:id" render = { (id) => <Diet id={id.match}/> } />
+          <Route exact path = "/diet/:id/foods" render = {(id) => <Foods id={id.match} />} />
+          <Route exact path = "/user/:id/diet/:dieta/foods" render = {(id, dieta) => <UserFoods id={id.match} dieta={dieta.match}/>} />
           <Route exact path = "/phyactivities" render = {() => <PhyActivities/>} />
-          <Route exact path = "/user/:id/phyactivities" render = {() => <UserPhyActivities/>} />
-          <Route exact path = "/phyactivity/:id" render = {() => <PhyActivity/>} />
-          <Route exact path = "/phyactivity/:id/plans" render = {() => <Plans/>} />
-          <Route exact path = "/user/:id/tipdiets" render = {() => <TipDiets/>} />
-          <Route exact path = "/user/:id/tipactivities" render = {() => <TipActivities/>} />
+          <Route exact path = "/user/:id/phyactivities" render = {(id) => <UserPhyActivities id={id.match}/>} />
+          <Route exact path = "/phyactivity/:id" render = {(id) => <PhyActivity id={id.match}/>} />
+          <Route exact path = "/phyactivity/:id/plans" render = {(id) => <Plans id={id.match}/>} />
+          <Route exact path = "/user/:id/tipdiets" render = {(id) => <TipDiets id={id.match}/>} />
+          <Route exact path = "/user/:id/tipactivities" render = {(id) => <TipActivities id={id.match}/>} />
         </div>
       </Router>
     );

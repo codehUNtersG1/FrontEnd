@@ -1,4 +1,4 @@
- const logIn = user =>{
+ export const actionLogIn = user =>{
      return {
          type: "LOG_IN",
          user
@@ -7,12 +7,9 @@
 
 
 
- const logOut = () =>{
+export  const actionLogOut = () =>{
     return {
         type: "LOG_OUT",
         user: null
     }
 };
-
-
-export { logIn, logOut };    

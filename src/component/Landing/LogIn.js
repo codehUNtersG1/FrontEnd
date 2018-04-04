@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
+import { GoogleLogin } from 'react-google-login-component';
+import { actionLogIn } from '../../actionCreators';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import '../../style/bootstrap.min.css';
 import '../../style/fontello.css';
 import '../../style/custom.css';
 
-
-import { GoogleLogin } from 'react-google-login-component';
-
-
 class LogIn extends Component {
 
 	constructor (props, context) {
-    	super(props, context);
-  	}
-
+		super(props, context);
+		this.state ={
+			name: "null",
+			id: "null" 
+		}
+	}
+	
   	responseGoogle (googleUser) {
   		const userEmail = googleUser.w3.U3;
 	    const id_token = googleUser.getAuthResponse();
@@ -21,9 +26,15 @@ class LogIn extends Component {
 	    let emailRegex = /^[-\w.%+]{1,64}@(unal.edu.co)$/i
 
 	    if(emailRegex.test(userEmail)){
-	    	console.log("Acá se debe hacer una validación en la base de datos");
-	    	console.log(googleUser);
-	    	console.log({accessToken: id_token});
+			console.log(googleId);
+			console.log(id_token);
+			/*this.setState({
+				name: userEmail.split("@")[0],
+				id: googleId
+			});*/
+			console.log("Acá se debe hacer una validación en la base de datos");
+			console.log(this.props);
+			this.props.history.push("/user/3");
 	    } else{
 	    	console.log("Error, su cuenta no tiene dominio unal");
 	    }
@@ -43,6 +54,11 @@ class LogIn extends Component {
 		);
 	}
 }
-
-
-export default LogIn;
+	const mapStateToProps = (state) =>{
+		return null;
+	};
+	
+	const mapDispatchToProps = dispatch =>{
+		return null;
+	};
+	export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LogIn));
