@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import Cookie from 'react-cookie';
 import {GoogleAPI, GoogleLogin, GoogleLogout} from 'react-google-oauth';
 
+
 class GLogIn extends Component {
-    /*responseGoogle = (response) => {
+    
+
+    responseGoogle = (google_response) => {
         var token = google_response.Zi;
         const requestOptions = {
           method: 'POST',
@@ -15,7 +19,7 @@ class GLogIn extends Component {
       }
       
       return fetch(`backend rails api url to google sign in path`, requestOptions)
-        .then(response => {
+        .then(response => { 
           Cookie.set('accesstoken', response.headers.get('access-token'), {
             expires: 7
           });
@@ -23,8 +27,10 @@ class GLogIn extends Component {
           Cookie.set('tokentype',response.headers.get('token-type'), {expires: 7});
           Cookie.set('expiry',response.headers.get('expiry'), {expires: 7});
           Cookie.set('uid', response.headers.get('uid'),{expires: 7});
+          console.log(Cookie.getAll());
       })
-    }*/
+    }
+
     render(){
         return(
             <GoogleAPI className="GoogleLogin" clientId="671570361656-35nm9i1fofjts95hv7rbk4mg5anbb8g4.apps.googleusercontent.com">
@@ -41,7 +47,6 @@ class GLogIn extends Component {
             </GoogleAPI>
         )
     }
-}   
-
+} 
 
 export default GLogIn;
