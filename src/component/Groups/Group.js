@@ -1,33 +1,18 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
-class Group extends Component {
+class Groups extends Component {
   
   render() {
-    if (this.props.user !== null){
-      return (
-        <div>
-          <Header/>
-          <h1> Este es la página de un grupo</h1>
-        </div>
-      );
-    } else{
-      return(<h1> Esta vista no esta permitida </h1>);
-    }
+    return (
+      <div>
+        <Header/>
+        <h1> Este es la página de un grupo</h1>
+        <Footer/>
+      </div>
+    );
   }
 }
 
-
-const mapStateToProps = (state) =>{
-  console.log(state);
-  return {
-    user: state.user
-  };
-};
-
-const mapDispatchToProps = dispatch =>{
-  return null;
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Group);
+export default Groups;

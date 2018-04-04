@@ -1,10 +1,9 @@
+.navbar{
+    padding: 0 8% 0 8%;
+    border-radius: 0 !important;
+    font-size: 20px !important;
+    margin: 0 0 0 0;
+}
 .navbar-brand{
-    max-width: 20%;
-    margin-right:10%;
-}
-#nav{
-    margin:24px 0;
-}
-#navb{
-    margin-right: 20% !important;
+    padding: 2% 2% 2% 2%;
 }

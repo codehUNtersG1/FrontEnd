@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../style/bootstrap.min.css';
 import logo from '../../image/logo.png';
 import './Header.css';
 
@@ -7,33 +6,30 @@ class Header extends Component {
   
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <img class="navbar-brand" src={logo}></img>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="navbar-collapse collapse show">
-          <ul class="navbar-nav mr-auto" id="navb">
+       <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <img class="navbar-brand" src={logo}/>
+            </div>
+            <ul class="nav navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Perfil</a>
+              <a class="nav-link" href="http://localhost:3000/user/1"><b>Perfil</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Dietas</a>
+              <a class="nav-link" href="http://localhost:3000/diet/1"><b>Dietas</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="javascript:void(0)">Ejercicio</a>
+              <a class="nav-link " href="http://localhost:3000/phyactivities"><b>Ejercicio</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="javascript:void(0)">Grupos</a>
+              <a class="nav-link " href="http://localhost:3000/groups"><b>Grupos</b></a>
             </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="search" type="text" placeholder="Search"/>
-            <button class="btn btn-success my-2 my-sm-0" id="search" type="button">Search</button>
-          </form>
-        </div>
-      </nav>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+            </ul>
+          </div>
+        </nav>
     );
   }
 }

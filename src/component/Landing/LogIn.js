@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
-import { GoogleLogin } from 'react-google-login-component';
-import { actionLogIn } from '../../actionCreators';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-
-import '../../style/bootstrap.min.css';
 import '../../style/fontello.css';
-import '../../style/custom.css';
+import './custom.css';
+
+
+import { GoogleLogin } from 'react-google-login-component';
+
 
 class LogIn extends Component {
 
 	constructor (props, context) {
-		super(props, context);
-		this.state ={
-			name: "null",
-			id: "null" 
-		}
-	}
-	
+    	super(props, context);
+  	}
+
   	responseGoogle (googleUser) {
   		const userEmail = googleUser.w3.U3;
 	    const id_token = googleUser.getAuthResponse();
@@ -26,15 +20,10 @@ class LogIn extends Component {
 	    let emailRegex = /^[-\w.%+]{1,64}@(unal.edu.co)$/i
 
 	    if(emailRegex.test(userEmail)){
-			console.log(googleId);
-			console.log(id_token);
-			/*this.setState({
-				name: userEmail.split("@")[0],
-				id: googleId
-			});*/
-			console.log("Acá se debe hacer una validación en la base de datos");
-			console.log(this.props);
-			this.props.history.push("/user/3");
+	    	console.log("Acá se debe hacer una validación en la base de datos");
+			console.log(googleUser);
+			console.log(googleUser.accessToken);
+	    	console.log({accessToken: id_token});
 	    } else{
 	    	console.log("Error, su cuenta no tiene dominio unal");
 	    }
@@ -44,21 +33,16 @@ class LogIn extends Component {
 	render(){
 		return(
 			<GoogleLogin socialId="533966985417-7sdh67rlsfg2oil6cu62osfac89fso4q.apps.googleusercontent.com"
-                className="button icon-gplus"
+                className="button"
                 hd ="unal.edu.co"	
                 scope="profile"
                 fetchBasicProfile={true}
                 responseHandler={this.responseGoogle}
-                buttonText="Login"
+                buttonText="Acceder con Google"
             />
 		);
 	}
 }
-	const mapStateToProps = (state) =>{
-		return null;
-	};
-	
-	const mapDispatchToProps = dispatch =>{
-		return null;
-	};
-	export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LogIn));
+
+
+export default LogIn;

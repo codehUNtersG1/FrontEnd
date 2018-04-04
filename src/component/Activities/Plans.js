@@ -1,31 +1,18 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header'
 
 class Plans extends Component {
   
   render() {
-    if (this.props.user !== null){
-      return (
-        <div>
-          <Header/>
-          <h1> Este son los planes</h1>
-        </div>
-      );
-    } else{
-      return(<h1> Esta vista no esta permitida </h1>);
-    }
+    return (
+      <div>
+        <Header/>
+        <h1> Este son los planes de una actividad física</h1>
+        <Footer/>
+      </div>
+    );
   }
 }
-const mapStateToProps = (state) =>{
-  console.log(state);
-  return {
-    user: state.user
-  };
-};
 
-const mapDispatchToProps = dispatch =>{
-  return null;
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Plans);
+export default Plans;

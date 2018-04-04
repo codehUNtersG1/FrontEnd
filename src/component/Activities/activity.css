@@ -1,0 +1,15 @@
+.jumbotron{
+    background-image: url(https://www.hunebednieuwscafe.nl/wp-content/uploads/2017/05/bosbes.jpg);
+    color: #F7F8F8;
+    text-align: center;
+    margin: 0 0 0 0;
+    padding: 10% 10% 10% 10%;
+}
+.row{
+    text-align: left;
+    padding-left: 10%;
+}
+
+.text{
+    padding-left: 8%;
+}
