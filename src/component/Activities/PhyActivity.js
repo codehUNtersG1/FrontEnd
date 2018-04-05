@@ -13,7 +13,7 @@ class PhyActivity extends Component {
           <h1><b>¡Bienvenido a un mundo activo!</b></h1>
         </div>
         <div class="container">
-          <div class="row">
+          <div class="row tips">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <h2><span class="glyphicon glyphicon-knight" />  Piensa Diferente</h2>
               <br/><h4>Cambia los pensamientos que te desvían de tu objetivo.</h4>

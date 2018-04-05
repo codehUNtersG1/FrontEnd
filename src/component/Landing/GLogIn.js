@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Store from '../../store';
 import Cookie from 'react-cookie';
-import {GoogleAPI, GoogleLogin, GoogleLogout} from 'react-google-oauth';
+import {GoogleAPI, GoogleLogin} from 'react-google-oauth';
 
 
 class GLogIn extends Component {
@@ -19,16 +20,18 @@ class GLogIn extends Component {
       }
       
       return fetch(`backend rails api url to google sign in path`, requestOptions)
-        .then(response => { 
-          Cookie.set('accesstoken', response.headers.get('access-token'), {
-            expires: 7
-          });
-          Cookie.set('client',response.headers.get('client'), {expires: 7});
-          Cookie.set('tokentype',response.headers.get('token-type'), {expires: 7});
-          Cookie.set('expiry',response.headers.get('expiry'), {expires: 7});
-          Cookie.set('uid', response.headers.get('uid'),{expires: 7});
-          console.log(Cookie.getAll());
-      })
+        .then((response)=>{
+            //console.log(Store.getState());
+            //console.log(requestOptions.body);
+            this.props.history.push('/user/3');
+        })
+        /*.then(addTodo) //Crear la accion
+        .then(Store.dispatch)
+        .catch(error =>{
+            console.error(error)
+        })
+        console.log(Store.getState());
+        */
     }
 
     render(){
