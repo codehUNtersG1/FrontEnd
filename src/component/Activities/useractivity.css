@@ -1,7 +1,15 @@
 #jumb{
-    background-color: #0d194d;
+    background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/V_XbnF7ve/abstract-background-with-animated-shapes-and-circles_epzg1y_ax__F0000.png);
     color: #F7F8F8;
     text-align: center;
     margin: 0 0 0 0;
     padding: 10% 10% 10% 10%;
+}
+#Tips{
+    text-align: center;
+}
+.conlis{
+    text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }

@@ -11,15 +11,16 @@ const nullToRender = (history) =>(
 );
 const guessToRender =() =>(
   <div>
+    <header/>
     <h1>Esta es una vista cuando uno quiere visitar el perfil de otra persona</h1>
     <Footer/>
   </div>
 );
 const myProfileToRender = (history) =>(
   <div>
-        <Header history={history}/>
-        <h1>Esta es mi perfil de usuario</h1>
-        <Footer/>
+    <Header history={history}/>
+    <h1>Esta es mi perfil de usuario</h1>
+    <Footer/>
   </div>
 );
 
