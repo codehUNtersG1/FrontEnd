@@ -9,7 +9,7 @@ class Header extends Component {
        <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-              <img class="navbar-brand" src={logo}/>
+              <img class="navbar-brand" src={logo} alt="logo Ubung"/>
             </div>
             <ul class="nav navbar-nav">
             <li class="nav-item">

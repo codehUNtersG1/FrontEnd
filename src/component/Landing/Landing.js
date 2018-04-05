@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+
+
+
+
+
 import logo from '../../image/logo3.png';
-import LogIn from './GLogIn';
+import LogIn from './LogIn';
 import video from '../../video/walk.mp4';
 import '../../style/fontello.css';
 import './custom.css';
@@ -18,7 +24,7 @@ class Landing extends Component {
           <img id="logo"src={logo} alt="UBUNG"/>    
           <div class="container" id="register">
             <h3 id="slogan"><i><b>Come bien. Ejercítate. Vive Mejor!</b></i></h3>
-            <LogIn/>
+            <LogIn history={this.props.history}/>
           </div>
         </div>
         <input type="checkbox" class="checkbox" id="check"/>
@@ -45,4 +51,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default withRouter(Landing);

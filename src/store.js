@@ -1,16 +1,21 @@
 import { createStore, applyMiddleware } from 'redux';
 
-const reducer = (state = { user: 9999 }, action) =>{
+const reducer = (state, action) =>{
 
     if (action.type === "LOG_IN"){
+        
         return {
             ...state,
-            user: state.user
+            id: action.id,
+            name: action.name
+            
         }
     } else if (action.type === "LOG_OUT"){
         return {
             ...state,
-            user: null
+            id: null,
+            name: null
+            
         }
     }else{
         return state;
@@ -19,7 +24,8 @@ const reducer = (state = { user: 9999 }, action) =>{
 }
 
 const initialState ={   
-    user: null
+    id: null,
+    name: null
 }
 
 const logger = store => next => action => {

@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import store from './store';
+
+
 
 import Landing from './component/Landing/Landing';
 import Profile from './component/User/Profile';
@@ -20,16 +25,18 @@ import Plans from './component/Activities/Plans';
 import TipDiets from './component/User/TipDiets';
 import TipActivities from './component/User/TipActivities';
 
+
 class App extends Component {
-   
+
   render() {
     return (
       <Router>
         <div>
+          <Switch>
           <Route exact path ="/" render={ () => <Landing /> }/>
           <Route exact path ="/user/:id" render={ () => <Profile /> }/>
           <Route exact path ="/groups" render = { () => <Groups /> } />
-          <Route exact path ="/group/:id" render = { () => <Group /> } />
+          <Route exact path ="/group/:adkjshkjdhas" render = { () => <Group /> } />
           <Route exact path = "/group/:id/events" render = { () => <Events /> } />
           <Route exact path = "/event/:id" render = { () => <Event /> } />
           <Route exact path = "/user/:id/achievements" render = { () => <Achievements />} />
@@ -43,10 +50,27 @@ class App extends Component {
           <Route exact path = "/phyactivity/:id/plans" render = {() => <Plans/>} />
           <Route exact path = "/user/:id/tipdiets" render = {() => <TipDiets/>} />
           <Route exact path = "/user/:id/tipactivities" render = {() => <TipActivities/>} />
+          </Switch>
         </div>
       </Router>
     );
   }
 }
-
-export default App;
+/*const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={(props) => {
+    console.log("verificando protección de la vista", store.id)
+   return store.getState().id !== null
+      ? <Component {...props} />
+      : <Redirect to='/' />
+  }} />
+)
+*/
+const mapStateToProps = (state) =>{
+  console.log(state)
+   return{
+     id: state.id,
+     name: state.id
+  }
+  
+}
+export default connect(mapStateToProps, null)(App);

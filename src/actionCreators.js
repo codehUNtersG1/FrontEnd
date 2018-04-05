@@ -1,7 +1,9 @@
- export const actionLogIn = user =>{
+ export const actionLogIn = (user) =>{
      return {
          type: "LOG_IN",
-         user
+         id: user.id,
+         name: user.name
+         
      }
  };
 
@@ -10,6 +12,7 @@
 export  const actionLogOut = () =>{
     return {
         type: "LOG_OUT",
-        user: null
+        id: null,
+        name: null
     }
 };
