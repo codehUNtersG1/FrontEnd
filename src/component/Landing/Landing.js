@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
+
+
+
+
 import logo from '../../image/logo3.png';
-import LogIn from './GLogIn';
+import LogIn from './LogIn';
 import video from '../../video/walk.mp4';
 import '../../style/fontello.css';
 import './custom.css';

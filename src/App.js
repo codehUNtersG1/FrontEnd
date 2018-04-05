@@ -34,22 +34,22 @@ class App extends Component {
         <div>
           <Switch>
           <Route exact path ="/" render={ () => <Landing /> }/>
-          <Route exact path ="/user/:id" render={ () => <Profile /> }/>
+          <Route exact path ="/user/:nombre" render={ (nombre) => <Profile nombre={nombre}/> }/>
           <Route exact path ="/groups" render = { () => <Groups /> } />
-          <Route exact path ="/group/:adkjshkjdhas" render = { () => <Group /> } />
-          <Route exact path = "/group/:id/events" render = { () => <Events /> } />
-          <Route exact path = "/event/:id" render = { () => <Event /> } />
-          <Route exact path = "/user/:id/achievements" render = { () => <Achievements />} />
-          <Route exact path = "/user/:id/diets" render = { () => <Diets /> } />
-          <Route exact path = "/diet/:id" render = { () => <Diet /> } />
-          <Route exact path = "/diet/:id/foods" render = {() => <Foods/>} />
-          <Route exact path = "/user/:id/diet/:id/foods" render = {() => <UserFoods/>} />
+          <Route exact path ="/group/:nombre" render = { () => <Group /> } />
+          <Route exact path = "/group/:nombre/events" render = { () => <Events /> } />
+          <Route exact path = "/event/:nombre" render = { () => <Event /> } />
+          <Route exact path = "/user/:nombre/achievements" render = { () => <Achievements />} />
+          <Route exact path = "/user/:nombre/diets" render = { () => <Diets /> } />
+          <Route exact path = "/diet/:nombre" render = { () => <Diet /> } />
+          <Route exact path = "/diet/:nombre/foods" render = {() => <Foods/>} />
+          <Route exact path = "/user/:nombre/diet/:numerodieta/foods" render = {() => <UserFoods/>} />
           <Route exact path = "/phyactivities" render = {() => <PhyActivities/>} />
-          <Route exact path = "/user/:id/phyactivities" render = {() => <UserPhyActivities/>} />
-          <Route exact path = "/phyactivity/:id" render = {() => <PhyActivity/>} />
-          <Route exact path = "/phyactivity/:id/plans" render = {() => <Plans/>} />
-          <Route exact path = "/user/:id/tipdiets" render = {() => <TipDiets/>} />
-          <Route exact path = "/user/:id/tipactivities" render = {() => <TipActivities/>} />
+          <Route exact path = "/user/:nombre/phyactivities" render = {() => <UserPhyActivities/>} />
+          <Route exact path = "/phyactivity/:nombre" render = {() => <PhyActivity/>} />
+          <Route exact path = "/phyactivity/:nombre/plans" render = {() => <Plans/>} />
+          <Route exact path = "/user/:nombre/tipdiets" render = {() => <TipDiets/>} />
+          <Route exact path = "/user/:nombre/tipactivities" render = {() => <TipActivities/>} />
           </Switch>
         </div>
       </Router>
