@@ -19,9 +19,9 @@ class LogIn extends Component {
 
 	    if(emailRegex.test(userEmail)){
 			console.log("Acá se debe hacer una validación en la base de datos");
-			this.props.history.push(`/user/${store.getState().name}`)
 			this.props.actionLogIn({id: googleId, name:userName})
-			this.setState({}, () => {})
+			this.props.history.push(`/user/${this.props.name}`)
+			
 			
 			
 	    } else{
