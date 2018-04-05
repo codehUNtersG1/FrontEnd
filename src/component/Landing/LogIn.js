@@ -3,8 +3,9 @@ import '../../style/fontello.css';
 import './custom.css';
 
 import store from '../../store';
-import { GoogleLogin } from 'react-google-login-component';
+//import { GoogleLogin } from 'react-google-login-component';
 import { connect } from 'react-redux';
+import {GoogleAPI, GoogleLogin} from 'react-google-oauth';
 import { actionLogIn } from '../../actionCreators';
 
 class LogIn extends Component {
@@ -32,16 +33,21 @@ class LogIn extends Component {
 
 	render(){
 			return(
-				<div>
-				<GoogleLogin socialId="533966985417-7sdh67rlsfg2oil6cu62osfac89fso4q.apps.googleusercontent.com"
-					className="button"
-					hd ="unal.edu.co"	
-					scope="profile"
-					fetchBasicProfile={true}
-					responseHandler={this.responseGoogle}
-					buttonText="Acceder con Google"
-				/>
-				</div>
+				<GoogleAPI className="GoogleLogin" clientId="671570361656-35nm9i1fofjts95hv7rbk4mg5anbb8g4.apps.googleusercontent.com">
+					<div>
+					<GoogleLogin 
+						fetchBasicProfile={true}
+						height="10" 
+                        width="55%" 
+                        text="Acceder con Google"
+                        backgroundColor="#006594d0"
+                        access="offline" 
+                        scope="email profile"
+                        onLoginSuccess={this.responseGoogle} 
+                        onFailure={this.responseGoogle}
+					/>
+					</div>
+				</GoogleAPI>
 			);
 	}
 }
