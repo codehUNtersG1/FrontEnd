@@ -22,7 +22,6 @@ class LogIn extends Component {
 			console.log("Acá se debe hacer una validación en la base de datos");
 			this.props.actionLogIn({id: googleId, name:userName})
 			this.props.history.push(`/user/${this.props.name}`)
-
 	    } else{
 	    	console.log("Error, su cuenta no tiene dominio unal");
 	    }
