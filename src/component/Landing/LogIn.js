@@ -30,7 +30,7 @@ class LogIn extends Component {
 
 	render(){
 			return(
-				<GoogleAPI className="GoogleLogin" clientId="671570361656-35nm9i1fofjts95hv7rbk4mg5anbb8g4.apps.googleusercontent.com">
+				<GoogleAPI className="GoogleLogin" clientId="533966985417-7sdh67rlsfg2oil6cu62osfac89fso4q.apps.googleusercontent.com">
 					<div>
 					<GoogleLogin 
 						fetchBasicProfile={true}
