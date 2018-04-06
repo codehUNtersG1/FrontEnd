@@ -18,7 +18,7 @@ const pageToRender = (history) =>(
 class Groups extends Component {
   
   RenderBody = () =>{
-    if(this.props.id !== null){
+    if(this.props.name !== null){
         return (pageToRender(this.props.history));
     }else {
       return (<Redirect to="/"/>);

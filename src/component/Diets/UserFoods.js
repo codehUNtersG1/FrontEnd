@@ -7,13 +7,13 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header'
 
 
-const pageToRender = (history) =>{
+const pageToRender = (history) =>(
   <div>
     <Header history={history}/>
     <h1> Este son las comidas de una dieta de una persona</h1>
     <Footer/>
     </div>
-}
+);
 
 
 class UserFoods extends Component {

@@ -8,13 +8,13 @@ import Header from '../Header/Header'
 
 
 
-const pageToRender = (history) =>{
+const pageToRender = (history) =>(
   <div>
     <Header history={history}/>
     <h1> Este son los tips de actividades</h1>
     <Footer/>
   </div>
-}
+);
 
 
 class TipActivities extends Component {

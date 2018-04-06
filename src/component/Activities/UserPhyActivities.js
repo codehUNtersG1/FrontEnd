@@ -9,7 +9,7 @@ import Header from '../Header/Header'
 import './useractivity.css';
 
 
-const pageToRender = (history) =>{
+const pageToRender = (history) =>(
   <div>
     <Header history={history}/>
     <div class="jumbotron" id="jumb">
@@ -39,7 +39,7 @@ const pageToRender = (history) =>{
           <h1>Tips</h1>
           <hr/>
           <ul class="list-group conlis">
-            <li class="list-group-item">The endpoint info here{this.state.tipAct}</li>
+            <li class="list-group-item">The endpoint info here</li>
             <li class="list-group-item">The endpoint info here</li>
           </ul>
           
@@ -50,8 +50,7 @@ const pageToRender = (history) =>{
     
     <Footer/>
   </div>
-
-}
+);
 
 class UserPhyActivities extends Component {
   constructor(props){
@@ -64,7 +63,8 @@ class UserPhyActivities extends Component {
   }
   
   RenderBody = () =>{
-    if(this.state.mode.match.params.nombre == this.props.name){
+    console.log("que aparece: ",this.state)
+    if(this.state.mode === this.props.name){
         return (pageToRender(this.props.history));
     }else {
       return (<Redirect to="/"/>);
