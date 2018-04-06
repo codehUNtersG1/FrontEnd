@@ -65,7 +65,7 @@ class UserPhyActivities extends Component {
   
   RenderBody = () =>{
     if(this.state.mode.match.params.nombre == this.props.name){
-        return (myProfileToRender(this.props.history));
+        return (pageToRender(this.props.history));
     }else {
       return (<Redirect to="/"/>);
     }
