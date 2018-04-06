@@ -14,4 +14,4 @@ Posibles features
 - Consumir más Endpoints y realizar vistas
 - Realizar vistas
 
-LINK HEROKU: https://frontubung.herokuapp.com/
+LINK HEROKU: https://ubungfe.herokuapp.com/
