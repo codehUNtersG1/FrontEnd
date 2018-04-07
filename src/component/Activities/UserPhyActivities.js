@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter, Redirect } from 'react-router-dom';
-
-
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header'
 import './useractivity.css';
 
 
-const pageToRender = (history) =>(
-  <div>
-    <Header history={history}/>
+class UserPhyActivities extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      tipAct: [],
+      activityInfo: [],
+    }
+  }
+  
+  render() {
+    return (
+    <div>
+    <Header history={this.props.history}/>
     <div class="jumbotron" id="jumb">
       <h1><b>Mis actividades</b></h1>
     </div>
@@ -47,62 +53,11 @@ const pageToRender = (history) =>(
         </div>
       </div>
     </div>
-    
     <Footer/>
   </div>
-);
-
-class UserPhyActivities extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      tipAct: [],
-      activityInfo: [],
-      mode: this.props.name
-    }
-  }
-  
-  RenderBody = () =>{
-    console.log("que aparece: ",this.state)
-    if(this.state.mode === this.props.name){
-        return (pageToRender(this.props.history));
-    }else {
-      return (<Redirect to="/"/>);
-    }
-  }
-
-  componentWillMount() {  
-    fetch('http://localhost:3000/tipactivities')
-      .then((response) => {
-        //return response;
-        console.log(response);
-      })
-      .then((tipAct) => {
-        this.setState({ tipAct: tipAct })
-      })
-  }
-  componentWillMount() {  
-    fetch('http://localhost:3000/phyactivities')
-      .then((response) => {
-        //return response;
-        console.log(response);
-      })
-      .then((activityInfo) => {
-        this.setState({ activityInfo: activityInfo })
-      })
-  }
-  render() {
-    return (
-      <this.RenderBody/>
     );
   }
 
 }
 
-const mapStateToProps = (state) =>{
-  return {
-    id: state.id,
-    name: state.name
-  }
-}
-export default withRouter(connect(mapStateToProps, null)(UserPhyActivities));
+export default UserPhyActivities;

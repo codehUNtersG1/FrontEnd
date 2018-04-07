@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import '../../style/fontello.css';
 import './custom.css';
 
-import store from '../../store';
-//import { GoogleLogin } from 'react-google-login-component';
+
 import { connect } from 'react-redux';
 import {GoogleAPI, GoogleLogin} from 'react-google-oauth';
 import { actionLogIn } from '../../actionCreators';
@@ -12,7 +11,6 @@ class LogIn extends Component {
 
 	responseGoogle = (googleUser) => {
   		const userEmail = googleUser.w3.U3;
-	    const id_token = googleUser.getAuthResponse();
 	    const googleId = googleUser.getId();
 	    
 		let emailRegex = /^[-\w.%+]{1,64}@(unal.edu.co)$/i

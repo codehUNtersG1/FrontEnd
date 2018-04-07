@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../../image/logo.png';
-import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
+import {Route, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actionLogOut } from '../../actionCreators'; 
 import './Header.css';
@@ -13,7 +13,7 @@ class Header extends Component {
   }
   render() {
     return (
-      <Router>
+      <Route>
        <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -21,16 +21,16 @@ class Header extends Component {
             </div>
             <ul class="nav navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href={"http://localhost:3000/user/" + this.props.name}><b>Perfil</b></a>
+              <NavLink className="nav-link" to={`/user/${this.props.name}`}><b>Perfil</b></NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href={"http://localhost:3000/user/" + this.props.name + "/diets"}><b>Dietas</b></a>
+              <NavLink className="nav-link" to={`/user/${this.props.name}/diets`}><b>Dietas</b></NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href={"http://localhost:3000/user/" + this.props.name + "/phyactivities"}><b>Ejercicio</b></a>
+              <NavLink className="nav-link" to={`/user/${this.props.name}/phyactivities`}><b>Ejercicio</b></NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="http://localhost:3000/groups"><b>Grupos</b></a>
+              <NavLink className="nav-link" to='/groups'><b>Grupos</b></NavLink>
             </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -38,7 +38,7 @@ class Header extends Component {
             </ul>
           </div>
         </nav>
-        </Router>
+        </Route>
     );
   }
 }

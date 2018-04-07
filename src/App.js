@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
-import { connect } from 'react-redux';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import store from './store';
+import authFunction from './authentication/authFunction';
+import authNullFunction from './authentication/authNullFunction';
 
 
 
@@ -26,51 +26,36 @@ import TipDiets from './component/User/TipDiets';
 import TipActivities from './component/User/TipActivities';
 
 
+
 class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div>
+      <div>
+        <Router>
           <Switch>
-          <Route exact path = "/" render={ () => <Landing /> }/>
-          <Route exact path = "/user/:nombre" render={ (nombre) => <Profile nombre={nombre}/> }/>
-          <Route exact path = "/groups" render = { () => <Groups /> } />
-          <Route exact path = "/group/:nombre" render = { () => <Group/> } />
-          <Route exact path = "/group/:nombre/events" render = { () => <Events/> } />
-          <Route exact path = "/event/:nombre" render = { () => <Event/> } />
-          <Route exact path = "/user/:nombre/achievements" render = { (nombre) => <Achievements nombre={nombre}/>} />
-          <Route exact path = "/user/:nombre/diets" render = { (nombre) => <Diets nombre={nombre}/> } />
-          <Route exact path = "/diet/:nombre" render = { () => <Diet/> } />
-          <Route exact path = "/diet/:nombre/foods" render = {() => <Foods/>} />
-          <Route exact path = "/user/:nombre/diet/:numerodieta/foods" render = {(nombre) => <UserFoods nombre={nombre}/>} />
-          <Route exact path = "/phyactivities" render = {() => <PhyActivities/>} />
-          <Route exact path = "/user/:nombre/phyactivities" render = {(nombre) => <UserPhyActivities nombre={nombre}/>} />
-          <Route exact path = "/phyactivity/:nombre" render = {() => <PhyActivity />} />
-          <Route exact path = "/phyactivity/:nombre/plans" render = {() => <Plans />} />
-          <Route exact path = "/user/:nombre/tipdiets" render = {(nombre) => <TipDiets nombre={nombre}/>} />
-          <Route exact path = "/user/:nombre/tipactivities" render = {(nombre) => <TipActivities nombre={nombre}/>} />
+            <Route exact path = "/" component={ Landing }/>
+            <Route exact path = "/user/:nombre" component={ authFunction(Profile)}/>
+            <Route exact path = "/groups" component = { authNullFunction(Groups) } />
+            <Route exact path = "/group/:nombre" component = {authNullFunction(Group)} />
+            <Route exact path = "/group/:nombre/events" component = { authNullFunction(Events)} />
+            <Route exact path = "/event/:nombre" component = { authNullFunction(Event)} />
+            <Route exact path = "/user/:nombre/achievements" component = { authFunction(Achievements)} />
+            <Route exact path = "/user/:nombre/diets" component = { authFunction(Diets) } />
+            <Route exact path = "/diet/:nombre" component = { authNullFunction(Diet)} />
+            <Route exact path = "/diet/:nombre/foods" component = {authNullFunction(Foods)} />
+            <Route exact path = "/user/:nombre/diet/:numerodieta/foods" component = {authFunction(UserFoods)} />
+            <Route exact path = "/phyactivities" component = {authNullFunction(PhyActivities)} />
+            <Route exact path = "/user/:nombre/phyactivities" component = {authFunction(UserPhyActivities)} />
+            <Route exact path = "/phyactivity/:nombre" component = {authNullFunction(PhyActivity)} />
+            <Route exact path = "/phyactivity/:nombre/plans" component = {authNullFunction(Plans)} />
+            <Route exact path = "/user/:nombre/tipdiets" component = {authFunction(TipDiets) } />
+            <Route exact path = "/user/:nombre/tipactivities" component = {authFunction(TipActivities)} />
           </Switch>
-        </div>
-      </Router>
+        </Router>
+      </div>
     );
   }
 }
-/*const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={(props) => {
-    console.log("verificando protección de la vista", store.id)
-   return store.getState().id !== null
-      ? <Component {...props} />
-      : <Redirect to='/' />
-  }} />
-)
-*/
-const mapStateToProps = (state) =>{
-  console.log(state)
-   return{
-     id: state.id,
-     name: state.id
-  }
-  
-}
-export default connect(mapStateToProps, null)(App);
+
+export default App;
