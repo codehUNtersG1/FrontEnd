@@ -22,7 +22,10 @@ const reducer = (state, action) =>{
     }
 
 }
-const persistedState = loadState();
+const persistedState = () =>{
+    console.log("deberia ser yo",loadState())
+    return    loadState();
+}
 
 
 const logger = store => next => action => {
@@ -35,6 +38,6 @@ const logger = store => next => action => {
 
 export const store = createStore(
   reducer,
-  persistedState,
+  persistedState(),
   applyMiddleware(logger)
 )
