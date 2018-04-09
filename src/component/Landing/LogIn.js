@@ -21,29 +21,29 @@ class LogIn extends Component {
 			this.props.actionLogIn({id: googleId, name:userName})
 			this.props.history.push(`/user/${this.props.name}`)
 	    } else{
-	    	console.log("Error, su cuenta no tiene dominio unal");
+			this.props.displayMessage("Error, su cuenta no tiene dominio unal")
 	    }
 	 
   	}
 
 	render(){
-			return(
-				<GoogleAPI className="GoogleLogin" clientId="533966985417-qfdt7qfclu4h9si70n693fas25n1p4u1.apps.googleusercontent.com">
-					<div>
-					<GoogleLogin 
-						fetchBasicProfile={true}
-						height="10" 
-                        width="55%" 
-                        text="Acceder con Google"
-                        backgroundColor="#006594d0"
-                        access="offline" 
-                        scope="email profile"
-                        onLoginSuccess={this.responseGoogle} 
-                        onFailure={this.responseGoogle}
-					/>
-					</div>
-				</GoogleAPI>
-			);
+		return(
+			<GoogleAPI className="GoogleLogin" clientId="533966985417-qfdt7qfclu4h9si70n693fas25n1p4u1.apps.googleusercontent.com">
+				<div>
+				<GoogleLogin 
+					fetchBasicProfile={true}
+					height="10" 
+					width="55%" 
+					text="Acceder con Google"
+					backgroundColor="#006594d0"
+					access="offline" 
+					scope="email profile"
+					onLoginSuccess={this.responseGoogle} 
+					onFailure={this.responseGoogle}
+				/>
+				</div>
+			</GoogleAPI>
+		);
 	}
 }
 const mapStateToProps = state =>{

@@ -14,6 +14,19 @@ import './custom.css';
 
 class Landing extends Component {
 
+  constructor(props){
+    super(props)
+    this.state = {
+      messages: []
+    }
+  }
+
+  displayMessage = (message) =>{
+    this.setState({
+      messages: [...this.state.messages, message]
+    })
+  }
+
   render() {
     return (
       <div>
@@ -24,7 +37,14 @@ class Landing extends Component {
           <img id="logo"src={logo} alt="UBUNG"/>    
           <div class="container" id="register">
             <h3 id="slogan"><i><b>Come bien. Ejercítate. Vive Mejor!</b></i></h3>
-            <LogIn history={this.props.history}/>
+            <div>
+            {
+              this.state.messages.map(message =>(
+                <p className="alert alert-warning"> {message} </p>
+              ))
+            }
+            </div>
+            <LogIn history={this.props.history} displayMessage={this.displayMessage}/>
           </div>
         </div>
         <input type="checkbox" class="checkbox" id="check"/>

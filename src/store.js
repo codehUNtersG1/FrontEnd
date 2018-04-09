@@ -24,7 +24,7 @@ const reducer = (state, action) =>{
 }
 const persistedState = () =>{
     console.log("deberia ser yo",loadState())
-    return    loadState();
+    return loadState();
 }
 
 
